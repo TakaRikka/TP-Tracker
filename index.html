@@ -1,0 +1,249 @@
+<!doctype html>
+<head>
+
+<title> TP Item Tracker </title>
+<link rel="stylesheet" type="text/css" href="css/css.css">
+<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="js/tracker.js"></script>
+<style> html{ overflow-x:hidden;
+} </style>
+</head>
+<body oncontextmenu="return false;">
+
+<!-- UI -->
+<div id="ScreenFrame">
+<div id="Frame">
+
+<!--<div id="LogoBox">
+	<img style="margin:25% 0 25% 0" src="resources/Logo2.png"/>
+</div>-->
+
+<div id="UpperBox">
+	<div class="ItemBox" id="OrdonSword">
+		<img class="item_icon_o" id="OSwordIcon" src="resources/items/OrdonSword.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+
+	<div class="ItemBox" id="MasterSword">
+		<img class="item_icon_o" id="MSwordIcon" src="resources/items/MasterSword.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+
+	<div class="ItemBox" id="OrdonShield">
+		<img class="item_icon_o" id="OShieldIcon" src="resources/items/OrdonShield.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+
+	<div class="ItemBox" id="HylianShield">
+		<img class="item_icon_o" id="HShieldIcon" src="resources/items/HylianShield.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+
+	<div class="ItemBox" id="Wallet">
+		<img class="item_icon" id="WalletIcon" src="resources/items/Wallet.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+	<!-- Row 1 -->
+
+	<div class="ItemBox" id="HeroTunic">
+		<img class="item_icon_o" id="HTunicIcon" src="resources/items/HeroTunic.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+
+	<div class="ItemBox" id="ZoraArmor">
+		<img class="item_icon_o" id="ZArmorIcon" src="resources/items/ZoraArmor.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+	<div class="ItemBox" id="MagicArmor">
+		<img class="item_icon_o" id="MArmorIcon" src="resources/items/MagicArmor.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+
+	<div class="ItemBox" id="Quiver">
+		<img class="item_icon_u" id="QuiverIcon" src="resources/items/Quiver.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+
+	<div class="ItemBox" id="BombUpgrade">
+		<img class="item_icon_o" id="BagIcon" src="resources/items/BombBag.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+	<!-- row 2 -->
+
+	<div class="ItemBox" id="FTShadow">
+		<img class="item_icon_o" src="resources/items/Shadow1.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+	<div class="ItemBox" id="GMShadow">
+		<img class="item_icon_o" src="resources/items/Shadow2.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+	<div class="ItemBox" id="LBShadow">
+		<img class="item_icon_o" src="resources/items/Shadow3.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+	<div class="ItemBox" id="Scent">
+		<img class="item_icon_u" id="ScentIcon" src="resources/items/Yscent.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+	<div class="ItemBox" id="Earring">
+		<img class="item_icon_o" src="resources/items/CoralEarring.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+
+	<!-- row 3 -->
+	<div class="ItemBox" id="AGShard">
+		<img class="item_icon_o" src="resources/items/Shard1.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+	<div class="ItemBox" id="SPRShard">
+		<img class="item_icon_o" src="resources/items/Shard2.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+	<div class="ItemBox" id="ToTShard">
+		<img class="item_icon_o" src="resources/items/Shard3.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+	<div class="ItemBox" id="CityShard">
+		<img class="item_icon_o" src="resources/items/Shard4.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+
+	<div class="ItemBox" id="Stamp">
+		<p class="CounterText"> <span id="StampCounter">0</span>/50 </p> 
+		<img class="item_icon" src="resources/items/Stamp.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+	<!-- row 4 --> 
+
+	<div class="ItemBox" id="HeartContainers">
+		<p class="CounterText"> <span id="HCCounter">0</span>/8 </p> 
+		<img class="item_icon" src="resources/items/HeartContainer.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+
+	<div class="ItemBox" id="HeartPieces">
+		<p class="CounterText"> <span id="HPCounter">0</span>/45 </p> 
+		<img class="item_icon" src="resources/items/HeartPiece60.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+
+	<div class="ItemBox" id="PoeSouls">
+		<p class="CounterText"> <span id="soulsCounter">0</span>/60 </p> 
+		<img class="item_icon" src="resources/items/PoeSoul.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+
+	<div class="ItemBox" id="Skills">
+		<p class="CounterText"> <span id="SkillCounter">0</span>/7 </p> 
+		<img class="item_icon" src="resources/items/HiddenSkill.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+
+	<div class="ItemBox" id="GoldenBugs">
+		<p class="CounterText"> <span id="BugCounter">0</span>/24 </p> 
+		<img class="item_icon" src="resources/items/Bug.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+
+</div>
+
+
+	<!---- ----->
+<div id="LowerBox">
+	<div class="ItemBox" id="Clawshots_itm"> <!--top -->
+		<img class="item_icon_u" id="ClawIcon" src="resources/items/Claw.png"/>
+		<img class="itembg"  src="resources/ItemBox.png"/>
+	</div>
+
+	<div class="ItemBox" id="Rod_itm">
+		<img class="item_icon_o" id="RodIcon" src="resources/items/Rod.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+	<div class="ItemBox" id="Ball_itm">
+		<img class="item_icon_o" id="BallIcon" src="resources/items/Ball.png"/>
+		<img class="itembg"  src="resources/ItemBox.png"/>
+	</div>
+	<div class="ItemBox" id="Spinner_itm">
+		<img class="item_icon_o" id="SpinnerIcon"  src="resources/items/Spinner.png"/>
+		<img class="itembg"  src="resources/ItemBox.png"/>
+	</div>
+	<div class="ItemBox" id="Bow_itm">
+		<img class="item_icon_o" id="BowIcon"  src="resources/items/Bow.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+
+
+	<div class="ItemBox" id="Boots_itm"> <!--right-->
+		<img class="item_icon_o" id="BootsIcon" src="resources/items/Boots.png"/>
+		<img class="itembg"  src="resources/ItemBox.png"/>
+	</div>
+	<div class="ItemBox" id="Rang_itm">
+		<img class="item_icon_o" id="RangIcon" src="resources/items/Rang.png"/>
+		<img class="itembg"  src="resources/ItemBox.png"/>
+	</div>
+	<div class="ItemBox" id="Lantern_itm">
+		<img class="item_icon_o" id="LanternIcon"  src="resources/items/Lantern.png"/>
+		<img class="itembg"  src="resources/ItemBox.png"/>
+	</div>
+	<div class="ItemBox" id="Slingshot_itm">
+		<img class="item_icon_o" id="SlingshotIcon"  src="resources/items/Slingshot.png"/>
+		<img class="itembg" src="resources/ItemBox.png"/>
+	</div>
+	<div class="ItemBox" id="Fishrod_itm">
+		<img class="item_icon_o" id="FishrodIcon"  src="resources/items/FishRod.png"/>
+		<img class="itembg"  src="resources/ItemBox.png"/>
+	</div>
+
+
+
+	<div class="ItemBox" id="Bag3_itm">
+		<img class="item_icon_o" id="Bag3Icon" src="resources/items/BombBag.png"/>
+		<img class="itembg"  src="resources/ItemBox.png"/>
+	</div>
+	<div class="ItemBox" id="Bag2_itm">
+		<img class="item_icon_o" id="Bag2Icon"  src="resources/items/BombBag.png"/>
+		<img class="itembg"  src="resources/ItemBox.png"/>
+	</div>
+	<div class="ItemBox" id="Bag1_itm">
+		<img class="item_icon_o" id="Bag1Icon" src="resources/items/BombBag.png"/>
+		<img class="itembg"  src="resources/ItemBox.png"/>
+	</div>
+	<div class="ItemBox" id="Hawkeye_itm"> <!--bottom-->
+		<img class="item_icon_o" id="HawkeyeIcon" src="resources/items/Hawkeye.png"/>
+		<img class="itembg"  src="resources/ItemBox.png"/>
+	</div>
+
+	<div class="ItemBox" id="Book_itm">
+		<img class="item_icon_o" id="BookIcon" src="resources/items/Skybook.png"/>
+		<img class="itembg"  src="resources/ItemBox.png"/>
+	</div>
+	<div class="ItemBox" id="Bottle4_itm">
+		<img class="item_icon_o" id="Bot4Icon" src="resources/items/Bottle.png"/>
+		<img class="itembg"  src="resources/ItemBox.png"/>
+	</div>
+
+
+	<div class="ItemBox" id="Bottle3_itm"> <!--left-->
+		<img class="item_icon_o" id="Bot3Icon" src="resources/items/Bottle.png"/>
+		<img class="itembg"  src="resources/ItemBox.png"/>
+	</div>
+	<div class="ItemBox" id="Bottle2_itm">
+		<img class="item_icon_o" id="Bot2Icon" src="resources/items/Bottle.png"/>
+		<img class="itembg"  src="resources/ItemBox.png"/>
+	</div>
+	<div class="ItemBox" id="Bottle1_itm">
+		<img class="item_icon_o" id="Bot1Icon" src="resources/items/Bottle.png"/>
+		<img class="itembg"  src="resources/ItemBox.png"/>
+	</div>
+	<div class="ItemBox" id="HorseCall_itm">
+		<img class="item_icon_o" id="CallIcon" src="resources/items/HorseCall.png"/>
+		<img class="itembg"  src="resources/ItemBox.png"/>
+	</div>
+</div>
+
+
+</div>
+</div>
+</body>
+</html>
