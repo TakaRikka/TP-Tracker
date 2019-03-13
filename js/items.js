@@ -27,7 +27,6 @@ $(".item_icon_o").mousedown(function(event) {
     }
 });
 
-
 $("#PoeSouls").mousedown(function(event) {
     switch (event.which) {
         case 1:
@@ -112,7 +111,6 @@ $("#HeartContainers").mousedown(function(event){
     }
         $("#HCCounter").html(HC);
     });
-
 
 $("#QuiverIcon").mousedown(function(event){
     switch (event.which) {
@@ -250,7 +248,6 @@ $("#Stamp").mousedown(function(event){
         $("#StampCounter").html(Stamp);
     });
 
-
 $("#ClawIcon").mousedown(function(event){
     switch (event.which) {
         case 1:
@@ -277,5 +274,17 @@ $("#ClawIcon").mousedown(function(event){
 		}
 	});
 
+
+$(".map-portal").mousedown(function(event){
+    switch (event.which) {
+        case 1:
+            $(this).css('opacity', '1');
+        break;
+
+        case 3:
+            $(this).css('opacity', '0.5');
+        break;
+    }    
+});
 
 });
