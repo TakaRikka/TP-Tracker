@@ -44,18 +44,14 @@ body{
 #UpperBox{
 	width: 340px;
 	height:125px;
-	display: inline-block;
 	margin-left:50px;
-	float:left;
 }
 
 #LowerBox{
 	width: 340px;
 	height:300px;
-	display: inline-block;
 	margin-left:50px;
-	padding-top:220px;
-	float:left;
+	margin-top:220px;
 }
 
 .ItemBox{
@@ -73,7 +69,6 @@ body{
 	width:60px;
 	height:60px;
 }
-
 
 .item_icon{
 	position: absolute;
@@ -102,3 +97,30 @@ body{
 	margin-top:36px;
     text-shadow: 0px 0px 4px #c10313;
 }
+
+
+/* Grid CSS */
+
+.main-grid{
+  display: grid;
+  grid-template-columns: 400px auto 512px 30px;
+  grid-auto-rows: auto;
+  grid-template-rows: 50px auto;
+}
+
+#item-grid{
+	grid-column: 1;
+	grid-row: 2;
+}
+
+#map{
+	grid-column: 3;
+	grid-row: 2;
+}
+
+.map-portal{
+	position: absolute;
+	opacity: 0.5;
+	cursor:pointer;
+}
+
