@@ -78,13 +78,13 @@ body{
 .item_icon_o{
 	position: absolute;
 	z-index: 10;
-	opacity: 0.5;
+	opacity: 0.25;
 }
 
 .item_icon_u{
 	position: absolute;
 	z-index: 10;
-	opacity: 0.5;
+	opacity: 0.25;
 }
 
 .CounterText{
