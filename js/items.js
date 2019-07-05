@@ -7,6 +7,7 @@ $(document).ready(function () {
 	var HP = 0;
     var HC = 0;
     var Stamp = 0;
+    var Sword = 0;
 	var Quiver = 0;
 	var Wallet = 0;
 	var Scent = 0;
@@ -110,6 +111,34 @@ $("#HeartContainers").mousedown(function(event){
             break;
     }
         $("#HCCounter").html(HC);
+    });
+
+$("#OSwordIcon").mousedown(function(event){
+    switch (event.which) {
+        case 1:
+            if(Sword < 2){
+                Sword += 1;
+            }
+            break;
+
+        case 3:
+            if(Sword > 0){
+                Sword -= 1;
+            }
+            break;
+    }
+        if(Sword < 1){
+            this.src = "resources/items/WoodSword.png";
+            $(this).css('opacity', '0.5');
+        }
+        if(Sword == 1){
+            this.src = "resources/items/WoodSword.png";
+            $(this).css('opacity', '1');
+        }
+        if(Sword > 1){
+            this.src = "resources/items/OrdonSword.png";
+        }
+        console.log(Sword);
     });
 
 $("#QuiverIcon").mousedown(function(event){
