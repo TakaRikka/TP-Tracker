@@ -13,6 +13,13 @@
 <!-- UI -->
 <div class="main-grid">
 
+<label class="switch">
+  <input type="checkbox" id="vertoggle">
+  <span class="slider"></span>
+  <span class="verType" id="SD" style="margin-left:-52px;"> SD </span>
+  <span class="verType" id="HD" style="margin-left:62px;"> HD </span>
+</label>
+
 <div id="item-grid">
 <div id="UpperBox" class="grid-item">
 	<div class="ItemBox" id="OrdonSword">
@@ -106,8 +113,9 @@
 	</div>
 
 	<div class="ItemBox" id="Stamp">
-		<p class="CounterText"> <span id="StampCounter">0</span>/50 </p> 
-		<img class="item_icon" src="resources/items/Stamp.png"/>
+		<p class="CounterText" id="HDStamp"> <span id="StampCounter">0</span>/50 </p> 
+		<img class="item_icon" id="stampico" src="resources/items/Stamp.png"/>
+		<img class="item_icon" id="midnaico" src="resources/midna.png"/>
 		<img class="itembg" src="resources/ItemBox.png"/>
 	</div>
 	<!-- row 4 --> 
