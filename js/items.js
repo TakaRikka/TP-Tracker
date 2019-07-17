@@ -14,6 +14,8 @@ $(document).ready(function () {
 	var Clawshots = 0;
 	var ClawType;
 
+    var Version = 0;
+
 
 
 $(".item_icon_o").mousedown(function(event) {
@@ -261,6 +263,7 @@ $("#ScentIcon").mousedown(function(event){
     });
 
 $("#Stamp").mousedown(function(event){
+if(Version == 1){
     switch (event.which) {
         case 1:
             if(Stamp < 50){
@@ -275,7 +278,8 @@ $("#Stamp").mousedown(function(event){
             break;
     }
         $("#StampCounter").html(Stamp);
-    });
+    }
+});
 
 $("#ClawIcon").mousedown(function(event){
     switch (event.which) {
@@ -314,6 +318,34 @@ $(".map-portal").mousedown(function(event){
             $(this).css('opacity', '0.5');
         break;
     }    
+});
+
+
+$('#HD').css('opacity', '0');
+$('#SD').css('opacity', '1');
+$('#stampico').hide();
+$('#HDStamp').hide();
+$('#midnaico').show();
+
+$('#vertoggle').click(function(){
+    if($('#vertoggle').is(':checked')){
+        Version = 1;
+        $('#HD').css('opacity', '1');
+        $('#SD').css('opacity', '0');
+
+        $('#stampico').show();
+        $('#HDStamp').show();
+        $('#midnaico').hide();
+    }
+    else{
+        Version = 0;
+        $('#HD').css('opacity', '0');
+        $('#SD').css('opacity', '1');
+
+        $('#stampico').hide();
+        $('#HDStamp').hide();
+        $('#midnaico').show();
+    }
 });
 
 });
