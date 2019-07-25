@@ -126,6 +126,23 @@ body{
 	cursor:pointer;
 }
 
+.map-region{
+	position: absolute;
+}
+
+.dungeonMark{
+  position: absolute;
+  cursor:pointer;
+}
+
+.dungeonMark:hover{
+  filter:brightness(150%);
+}
+
+/*map:hover{
+	filter:brightness(125%);
+}*/
+
 /* toggle switch */
 .switch {
   position: relative;
@@ -189,4 +206,157 @@ input:checked + .slider:before {
 	position: absolute;
 	margin-top: 3px;
 
+}
+
+.polygon{
+  shape-outside: polygon(0 0, 0 300px, 200px 300px);
+  /*background: linear-gradient(to top right, #86F7CC, #67D7F5);*/
+  position: absolute;
+}
+
+.polygon:hover{
+	cursor: pointer;
+}
+
+#ordon-map{
+  clip-path: polygon(30px 122px, 82.34% 97.68%, 96.2% 82.66%, 102.39% 38.83%, 95% 16.54%, 86.99% 14.93%, 73.46% 2.22%, 63.15% -0.26%, 46.71% 10.07%, 23.41% 2.69%, 13.03% 10.15%, 9.59% 19.41%, 5.4% 27.99%, 2.33% 44.6%, -0.73% 53.72%, 3.09% 66.67%, 11.89% 72.56%);
+  height: 121px;
+  width: 141px;
+}
+
+#faron-map{
+  clip-path: polygon(39px 127px, 29.28% 85.09%, 34.92% 90.97%, 48.01% 96.53%, 59.13% 101.77%, 74.76% 85.44%, 88.14% 76.28%, 93.34% 57.31%, 96.71% 54.77%, 97.91% 43.52%, 101.36% 36.73%, 96.33% 20.46%, 86.38% 24.56%, 76.82% 23.34%, 77.9% 12.89%, 70.43% -0.5%, 60.62% 1.1%, 48.73% 2.59%, 44.08% 15.03%, 40.11% 12.04%, 36.93% 17.76%, 31.9% 19.24%, 23.2% 19.02%, 17.77% 25.98%, 12.8% 23.1%, 8.48% 24.44%, 8.07% 37.1%, 4.39% 42.28%, -0.7% 43.92%, 4.33% 55.08%, 7.14% 63.27%, 12.4% 81.4%);
+  height: 147px;
+  width: 198px;	
+}
+
+#eldin-map{
+  clip-path: polygon(115px 259px, 78.62% 99.62%, 98.2% 85.55%, 97.13% 80.43%, 99.66% 77.67%, 100.98% 71.41%, 96.25% 65.5%, 94.94% 43.48%, 83.51% 42.4%, 81.33% 39.48%, 86.01% 36.32%, 79.29% 25.01%, 73.29% 24.12%, 68.94% 13.83%, 61.46% 13.77%, 58.03% 6.48%, 45.06% 4.78%, 33.94% -0.78%, 34.05% 3.08%, 32.18% 8.21%, 30.87% 17.86%, 30.79% 34.93%, 26.14% 41.17%, 17.66% 46.49%, 8.71% 48.86%, 9.38% 58.76%, 5.75% 76.75%, -0.27% 81.44%, -0.67% 84.51%, 5.11% 87.25%, 8.16% 91.16%, 9.03% 99.76%, 26.06% 100.03%, 34.58% 97.69%, 38.3% 98.32%, 45.75% 95.74%, 53.19% 98.93%, 58.51% 98.66%);
+  height: 258px;
+  width: 188px;
+}
+
+#lanayru-map{
+  clip-path: polygon(50px 290px, 38.21% 96.75%, 41.01% 93.77%, 46.1% 95.22%, 50.82% 88.45%, 56.09% 87.88%, 60.88% 88.59%, 69.64% 87%, 68.66% 84.27%, 71.28% 83.28%, 76.56% 76.44%, 75.67% 72.8%, 77.66% 70.88%, 76.88% 63.75%, 79.94% 55.61%, 93.27% 52.52%, 97.27% 47.47%, 96.3% 38.04%, 98.49% 32.43%, 96.02% 27.8%, 98.73% 26.33%, 98.17% 19.52%, 101.34% 12.84%, 93.82% 7.52%, 94.25% 5.07%, 89.8% 1.32%, 80.97% 2.13%, 76.49% 0.46%, 67.9% 1.55%, 63.90% -0.98%, 55.41% 0.21%, 51.99% 2.6%, 53.75% 8.6%, 54.15% 14.86%, 49.49% 19.27%, 46.71% 18.49%, 36.58% 22.22%, 38.4% 26.31%, 33% 27.82%, 32.08% 39.15%, 27.04% 39.53%, 21.99% 44.49%, 23.31% 46.96%, 20.59% 53.21%, 2.68% 59.78%, 2.2% 64.07%, 5.61% 73.05%, -0.81% 77.1%, -0.18% 86.73%, 3.86% 91.96%, 11.81% 95.54%, 11.4% 100.17%, 17.08% 99.85%, 21.96% 100.77%);
+  height: 297px;
+  width: 205px;
+}
+
+#snowpeak-map{
+  clip-path: polygon(47px 180px, 36.92% 96.36%, 43.2% 100.62%, 50.03% 94.63%, 57.47% 90.15%, 62.46% 86.42%, 67.68% 79.06%, 66.19% 72.01%, 69.74% 66.53%, 76.62% 64.57%, 77.98% 46.34%, 82.84% 42.92%, 83.44% 35.5%, 90.27% 32.8%, 96.04% 33.45%, 97.04% 28.92%, 100.54% 26.88%, 101.35% 12.23%, 99.69% 5.25%, 94.96% 3.77%, 87.04% 2.89%, 82.97% -1.14%, 76.57% 1.21%, 72.45% -0.46%, 62.35% 3.83%, 56.27% 2.43%, 47.24% 7.92%, 42.15% 5.87%, 39.77% 11.93%, 35.55% 11.47%, 30.79% 16.93%, 25% 17.21%, 17.79% 35.96%, 12.76% 39.84%, 13.12% 45.69%, 6.47% 51.51%, 1.7% 48.42%, 0.74% 53.74%, 1.39% 60.71%, -1.14% 65.59%, 2.15% 77.35%, 1.02% 81.7%, 2.36% 89.76%, 16.15% 92.71%);
+  height: 186px;
+  width: 189px;
+}
+
+#desert-map{
+  clip-path: polygon(28px 163px, 31.73% 100.63%, 65.34% 100.92%, 71.79% 94.05%, 75.4% 99.17%, 81.75% 94.59%, 88.68% 97.08%, 100.43% 92.91%, 101.3% 69.94%, 90.76% 64.34%, 83.42% 56.8%, 83.82% 48.19%, 84.72% 36.27%, 91.12% 35.82%, 91.48% 12.93%, 85.58% 11.32%, 76.98% 7.64%, 61.74% 6.97%, 30.51% -0.77%, 19.18% 0.88%, 11.44% 5.26%, 6.69% 9.55%, 8.18% 21.22%, 5.4% 27.99%, 10.18% 36.12%, 6.56% 45.2%, 4.9% 54.93%, -0.43% 65.46%, -2.2% 74.97%, 1.65% 87.77%, 9.28% 97.12%);
+  height: 166px;
+  width: 142px;
+}
+
+#castle-map{
+  clip-path: polygon(53.8% 100.92%, 104.22% 100.4%, 87.55% 43.52%, 77.86% 53.55%, 62.62% 15.93%, 74.17% 9.65%, 50.2% -1.23%, 32.43% 30.38%, 21.22% 55.76%, 13.52% 42.65%, 1.83% 67.56%, -0.34% 100.4%);
+  height: 61px;
+  width: 52px;
+}
+
+#closeButton{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    color:black;
+    height:20px;
+    width:20px;
+    position: absolute;
+    margin:503px 0 0 475px;
+    font-size:20px;
+    font-weight: bold;
+}
+
+#closeButton:hover{
+  color:darkred;
+}
+
+#region-title{
+  color:#ddab54;
+  position: absolute;
+  font-family: arial;
+  margin: 20px 0 0 15px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size:27px;
+  font-style: italic;
+  text-shadow:0px 1px black;
+}
+
+.area-title{
+  color:#de2c26;
+  position: absolute;
+  font-family: arial;
+  margin: 20px 0 0 15px;
+  text-decoration: underline;
+  font-size:21px;
+  margin: 60px 0 0 20px;
+  text-shadow: 0px 1px black;
+}
+
+.itemCheck{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    color:white;
+    height:20px;
+    position: absolute;
+    font-size:14px;
+    text-shadow: 0px 1px black;
+
+    /*checkbox*/
+    width:0;
+    height:0;
+    opacity: 0.5;
+
+}
+
+.itemCheck:hover{
+  text-decoration: underline;
+}
+
+.page_ico{
+  position: absolute;
+  filter: brightness(0.3);
+}
+
+#lanayrupage{
+  height:478px;
+  width:529px;
+  overflow-y: scroll;
+  position: absolute;
+  margin-top:49px;
+}
+
+#eldinpage{
+  height:478px;
+  width:529px;
+  overflow-y: scroll;
+  position: absolute;
+  margin-top:49px;
+}
+
+.itemLabel{
+  color:white;
+  position: absolute;
+  font-size:14px;
+  font-family: arial;
+  text-shadow: 0px 1px black;
+}
+
+.itemLabel:hover{
+  cursor: pointer;
+  text-decoration: underline;
 }
