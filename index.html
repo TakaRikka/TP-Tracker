@@ -5,8 +5,10 @@
 <link rel="stylesheet" type="text/css" href="css/css.css">
 <script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="js/items.js"></script>
+<script src="js/imagemap.js"></script>
 <!--<style> html{ overflow-x:hidden;
 } </style>-->
+
 </head>
 <body oncontextmenu="return false;">
 
@@ -249,7 +251,7 @@
 
 
 <div id="map">
-	<!-- portals -->
+	<!-- portals 
 	<img class="map-portal" style="margin:420px 0 0 257px;" src="resources/portal_small.png"/>
 	<img class="map-portal" style="margin:388px 0 0 265px;" src="resources/portal_small.png"/>
 	<img class="map-portal" style="margin:365px 0 0 237px;" src="resources/portal_small.png"/>
@@ -264,10 +266,666 @@
 	<img class="map-portal" style="margin:148px 0 0 389px;" src="resources/portal_small.png"/>
 	<img class="map-portal" style="margin:55px 0 0 318px;" src="resources/portal_small.png"/>
 	<img class="map-portal" style="margin:46px 0 0 156px;" src="resources/portal_small.png"/>
-	<img class="map-portal" style="margin:21px 0 0 266px;" src="resources/portal_small.png"/>
+	<img class="map-portal" style="margin:21px 0 0 266px;" src="resources/portal_small.png"/> -->
 
-	<img src="resources/map.png"/>
+	<div id="worldmap">
+		<img class="map-region" id="snowpeak-img" style="margin:21px 0 0 82px;" src="resources/Snowpeak.png"/>
+		<img class="map-region" id="desert-img" style="margin:186px 0 0 45px;" src="resources/Desert.png"/>
+		<img class="map-region" id="ordon-img" style="margin:403px 0 0 217px;" src="resources/Ordon.png"/>
+		<img class="map-region" id="faron-img" style="margin:276px 0 0 165px;" src="resources/Faron.png"/>
+		<img class="map-region" id="eldin-img" style="margin:57px 0 0 297px;" src="resources/Eldin.png"/>
+		<img class="map-region" id="lanayru-img" style="margin:21px 0 0 160px;" src="resources/Lanayru.png"/>
+		<img class="map-region" id="HC" style="margin: 145px 0 0 249px;" src="resources/castle.png"/>
+
+		<div class="polygon" style="margin:403px 0 0 217px;" id="ordon-map"></div>
+		<div class="polygon" style="margin:276px 0 0 165px;" id="faron-map"></div>
+		<div class="polygon" style="margin:57px 0 0 297px;"  id="eldin-map"></div>
+		<div class="polygon" style="margin:21px 0 0 160px;"  id="lanayru-map"></div>
+		<div class="polygon" style="margin:21px 0 0 82px;"   id="snowpeak-map"></div>
+		<div class="polygon" style="margin:186px 0 0 45px;"  id="desert-map"></div>
+		<div class="polygon" style="margin:145px 0 0 249px;"  id="castle-map"></div>
+		
+		<img class="dungeonMark" id="FT" style="margin: 353px 0 0 240px;" src="resources/dungeonmark.png"/>
+		<img class="dungeonMark" id="GM" style="margin: 197px 0 0 436px;" src="resources/dungeonmark.png"/>
+		<img class="dungeonMark" id="LB" style="margin: 255px 0 0 207px;" src="resources/dungeonmark.png"/>
+		<img class="dungeonMark" id="AG" style="margin: 215px 0 0 70px;" src="resources/dungeonmark.png"/>
+		<img class="dungeonMark" id="SPR" style="margin: 147px 0 0 99px;"  src="resources/dungeonmark.png"/>
+		<img class="dungeonMark" id="ToT" style="margin: 336px 0 0 219px;" src="resources/dungeonmark.png"/>
+		<img class="dungeonMark" id="City" style="margin: 272px 0 0 192px;" src="resources/dungeonmark.png"/>
+		<img class="dungeonMark" id="PoT" style="margin: 200px 0 0 70px;" src="resources/MCicon.png"/>
+		<img class="dungeonMark" id="CoO" style="margin: 314px 0 0 68px;" src="resources/marker.png"/>
+		
+		
+	</div>
+
+	<div id="pagemap">
+		<p id="region-title"></p>
+		<img class="page_ico" draggable="false" id="pageBG" src="resources/Ordon_page.png"/>
+
+			<div id="ordonpage">
+				<p class="area-title">Link's House:</p>
+				<label class="itemLabel"style="margin:88px 0 0 20px;"><input type="checkbox" class="itemCheck" > Wooden Sword Chest </label>
+				<label class="itemLabel"style="margin:108px 0 0 20px;"><input type="checkbox" class="itemCheck" > 50 Rupee Chest </label>
+
+				<p class="area-title" style="margin:140px 0 0 20px;">Ordon Village:</p>
+				<label class="itemLabel"style="margin:168px 0 0 20px;"><input type="checkbox" class="itemCheck" > Fishing Rod </label>
+				<label class="itemLabel"style="margin:188px 0 0 20px;"><input type="checkbox" class="itemCheck" > Sera's Bottle </label>
+				<label class="itemLabel"style="margin:208px 0 0 20px;"><input type="checkbox" class="itemCheck" > Slingshot </label>
+				<label class="itemLabel"style="margin:228px 0 0 20px;"><input type="checkbox" class="itemCheck" > Ordon Shield</label>
+				<label class="itemLabel"style="margin:248px 0 0 20px;"><input type="checkbox" class="itemCheck" > Ordon Sword</label>
+				<label class="itemLabel"style="margin:268px 0 0 20px;"><input type="checkbox" class="itemCheck" > Iron Boots chest</label>
+
+				<p class="area-title" style="margin:300px 0 0 20px;">Ordon Ranch:</p>
+				<label class="itemLabel"style="margin:328px 0 0 20px;"><input type="checkbox" class="itemCheck" > Grotto - 50 Rupee chest </label>
+				<label class="itemLabel"style="margin:348px 0 0 20px;"><input type="checkbox" class="itemCheck" > Goats Heart Piece </label>
+				
+			</div>
+
+			<div id="eldinpage">
+
+				<p class="area-title" style="margin:12px 0 0 20px;">Kakariko Village:</p>
+				<label class="itemLabel"style="margin:40px 0 0 20px;"><input type="checkbox" class="itemCheck" > Inn - 20 Rupee chest </label>
+				<label class="itemLabel"style="margin:60px 0 0 20px;"><input type="checkbox" class="itemCheck" > Heart Piece chest </label>
+				<label class="itemLabel"style="margin:80px 0 0 20px;"><input type="checkbox" class="itemCheck" > Graveyard - 50 Rupee chest </label>
+				<label class="itemLabel"style="margin:100px 0 0 20px;"><input type="checkbox" class="itemCheck" > Tower - 50 Rupee chest </label>
+				<label class="itemLabel"style="margin:120px 0 0 20px;"><input type="checkbox" class="itemCheck" > 100 Rupee chest </label>
+				<label class="itemLabel"style="margin:140px 0 0 20px;"><input type="checkbox" class="itemCheck" > Archery Heart Piece </label>
+				<label class="itemLabel"style="margin:160px 0 0 20px;"><input type="checkbox" class="itemCheck" > Cliff Heart Piece </label>
+				<label class="itemLabel"style="margin:180px 0 0 20px;"><input type="checkbox" class="itemCheck" > Wooden Shield </label>
+				<label class="itemLabel"style="margin:200px 0 0 20px;"><input type="checkbox" class="itemCheck" > Hylian Shield </label>
+				<label class="itemLabel"style="margin:220px 0 0 20px;"><input type="checkbox" class="itemCheck" > Barnes Bomb Bag </label>
+				<label class="itemLabel"style="margin:240px 0 0 20px;"><input type="checkbox" class="itemCheck" > Zora Armor </label>
+				<label class="itemLabel"style="margin:260px 0 0 20px;"><input type="checkbox" class="itemCheck" > Coral Earring </label>
+				<label class="itemLabel"style="margin:280px 0 0 20px;"><input type="checkbox" class="itemCheck" > Hawkeye </label>
+				<label class="itemLabel"style="margin:300px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe #1 </label>
+				<label class="itemLabel"style="margin:320px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe #2 </label>
+				<label class="itemLabel"style="margin:340px 0 0 20px;"><input type="checkbox" class="itemCheck" > Graveyard - Poe #1 </label>
+				<label class="itemLabel"style="margin:360px 0 0 20px;"><input type="checkbox" class="itemCheck" > Graveyard - Poe #2 </label>
+
+				<p class="area-title" style="margin:392px 0 0 20px;">Death Mountain:</p>
+				<label class="itemLabel" style="margin:420px 0 0 20px;"><input type="checkbox" class="itemCheck"> Heart Piece Chest </label>
+				<label class="itemLabel"style="margin:440px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe </label>
+
+				<p class="area-title" style="margin:472px 0 0 20px;">Hidden Village:</p>
+				<label class="itemLabel" style="margin:500px 0 0 20px;"><input type="checkbox" class="itemCheck" > Skybook </label>
+				<label class="itemLabel"style="margin:520px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe </label>
+				<label class="itemLabel"style="margin:540px 0 0 20px;"><input type="checkbox" class="itemCheck" > Cats Heart Piece </label>
+
+				<p class="area-title" style="margin:12px 0 0 281px;">Eldin Field:</p>
+				<label class="itemLabel" style="margin:40px 0 0 281px;"><input type="checkbox" class="itemCheck" > Heart Piece chest </label>
+				<label class="itemLabel" style="margin:60px 0 0 281px;"><input type="checkbox" class="itemCheck" > Grotto - 50 Rupee chest </label>
+				<label class="itemLabel" style="margin:80px 0 0 281px;"><input type="checkbox" class="itemCheck" > Grotto - 50 Rupee chest </label>
+				<label class="itemLabel" style="margin:100px 0 0 281px;"><input type="checkbox" class="itemCheck" > Grotto - 50 Rupee chest </label>
+				<label class="itemLabel" style="margin:120px 0 0 281px;"><input type="checkbox" class="itemCheck" > Heart Piece chest </label>
+				<label class="itemLabel" style="margin:140px 0 0 281px;"><input type="checkbox" class="itemCheck" > Grotto - Bombs (5) chest </label>
+				<label class="itemLabel" style="margin:160px 0 0 281px;"><input type="checkbox" class="itemCheck" > Grotto - Bombs (5) chest </label>
+				<label class="itemLabel" style="margin:180px 0 0 281px;"><input type="checkbox" class="itemCheck" > Grotto - Heart Piece chest </label>
+				<label class="itemLabel" style="margin:200px 0 0 281px;"><input type="checkbox" class="itemCheck" > Stockcave - 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:220px 0 0 281px;"><input type="checkbox" class="itemCheck" > Stockcave - Heart Piece chest </label>
+				<label class="itemLabel" style="margin:240px 0 0 281px;"><input type="checkbox" class="itemCheck" > Stockcave - 100 Rupee chest </label>
+				<label class="itemLabel" style="margin:260px 0 0 281px;"><input type="checkbox" class="itemCheck" > Hotspring Heart Piece </label>
+
+				<p class="area-title" style="margin:292px 0 0 281px;">Gorge:</p>
+				<label class="itemLabel"style="margin:320px 0 0 281px;"><input type="checkbox" class="itemCheck" > 100 Rupee chest </label>
+				<label class="itemLabel"style="margin:340px 0 0 281px;"><input type="checkbox" class="itemCheck" > Heart Piece chest </label>
+				<label class="itemLabel"style="margin:360px 0 0 281px;"><input type="checkbox" class="itemCheck" > Rock Spire Heart Piece </label>
+				<label class="itemLabel"style="margin:380px 0 0 281px;"><input type="checkbox" class="itemCheck" > Poe </label>
+				<label class="itemLabel"style="margin:400px 0 0 281px;"><input type="checkbox" class="itemCheck" > Cave - 20 Rupee chest </label>
+				<label class="itemLabel"style="margin:420px 0 0 281px;"><input type="checkbox" class="itemCheck" > Cave - 50 Rupee chest </label>
+				<label class="itemLabel"style="margin:440px 0 0 281px;"><input type="checkbox" class="itemCheck" > Cave - Heart Piece chest </label>
+				<label class="itemLabel"style="margin:460px 0 0 281px;"><input type="checkbox" class="itemCheck" > Cave - Poe </label>
+			</div>
+
+			<div id="lanayrupage" style="overflow-y:scroll;">
+				<p class="area-title" style="margin:12px 0 0 20px;">Zora's Domain:</p>	
+				<label class="itemLabel"style="margin:40px 0 0 20px;"><input type="checkbox" class="itemCheck" > Outside - 10 Rupee chest </label>
+				<label class="itemLabel"style="margin:60px 0 0 20px;"><input type="checkbox" class="itemCheck" > Outside - 20 Rupee chest </label>
+				<label class="itemLabel"style="margin:80px 0 0 20px;"><input type="checkbox" class="itemCheck" > Outside - Poe #1 </label>
+				<label class="itemLabel"style="margin:100px 0 0 20px;"><input type="checkbox" class="itemCheck" > Outside - Poe #2 </label>
+				<label class="itemLabel"style="margin:120px 0 0 20px;"><input type="checkbox" class="itemCheck" > Inside - 50 Rupee chest </label>
+				<label class="itemLabel"style="margin:140px 0 0 20px;"><input type="checkbox" class="itemCheck" > Inside - 50 Rupee chest </label>
+				<label class="itemLabel"style="margin:160px 0 0 20px;"><input type="checkbox" class="itemCheck" > Goron Bomb Bag </label>
+
+				<p class="area-title" style="margin:192px 0 0 20px;">Lake Hylia:</p>	
+				<label class="itemLabel"style="margin:220px 0 0 20px;"><input type="checkbox" class="itemCheck" > 100 Rupee chest </label>
+				<label class="itemLabel"style="margin:240px 0 0 20px;"><input type="checkbox" class="itemCheck" > 50 Rupee chest </label>
+				<label class="itemLabel"style="margin:260px 0 0 20px;"><input type="checkbox" class="itemCheck" > 100 Rupee chest </label>
+				<label class="itemLabel"style="margin:280px 0 0 20px;"><input type="checkbox" class="itemCheck" > Spring - 5 Rupee chest</label>
+				<label class="itemLabel"style="margin:300px 0 0 20px;"><input type="checkbox" class="itemCheck" > Spring - 10 Rupee chest </label>
+				<label class="itemLabel"style="margin:320px 0 0 20px;"><input type="checkbox" class="itemCheck" > Spring - 5 Rupee chest </label>
+				<label class="itemLabel"style="margin:340px 0 0 20px;"><input type="checkbox" class="itemCheck" > Spring - Bombs (5) chest </label>
+				<label class="itemLabel"style="margin:360px 0 0 20px;"><input type="checkbox" class="itemCheck" > Spring - Heart Piece chest </label>
+				<label class="itemLabel"style="margin:380px 0 0 20px;"><input type="checkbox" class="itemCheck" > 100 Rupee chest </label>
+				<label class="itemLabel"style="margin:400px 0 0 20px;"><input type="checkbox" class="itemCheck" > Heart Piece chest </label>
+				<label class="itemLabel"style="margin:420px 0 0 20px;"><input type="checkbox" class="itemCheck" > 50 Rupee chest </label>
+				<label class="itemLabel"style="margin:440px 0 0 20px;"><input type="checkbox" class="itemCheck" > 20 Rupee chest </label>
+				<label class="itemLabel"style="margin:460px 0 0 20px;"><input type="checkbox" class="itemCheck" > 10 Rupee chest </label>
+				<label class="itemLabel"style="margin:480px 0 0 20px;"><input type="checkbox" class="itemCheck" > Auru's Memo </label>
+				<label class="itemLabel"style="margin:500px 0 0 20px;"><input type="checkbox" class="itemCheck" > Iza Bomb Bag </label>
+				<label class="itemLabel"style="margin:520px 0 0 20px;"><input type="checkbox" class="itemCheck" > Giant Bomb Bags </label>
+				<label class="itemLabel"style="margin:540px 0 0 20px;"><input type="checkbox" class="itemCheck" > Grotto - 100 Rupee chest</label>
+				<label class="itemLabel"style="margin:560px 0 0 20px;"><input type="checkbox" class="itemCheck" > Grotto - 100 Rupee chest</label>
+				<label class="itemLabel"style="margin:580px 0 0 20px;"><input type="checkbox" class="itemCheck" > Spring - 100 Rupee chest </label>
+				<label class="itemLabel"style="margin:600px 0 0 20px;"><input type="checkbox" class="itemCheck" > Spring - 100 Rupee chest </label>
+				<label class="itemLabel"style="margin:620px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe #1 </label>
+				<label class="itemLabel"style="margin:640px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe #2 </label>
+				<label class="itemLabel"style="margin:660px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe #3 </label>
+				<label class="itemLabel"style="margin:680px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe #4 </label>
+				<label class="itemLabel"style="margin:700px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe #5 </label>
+
+				<p class="area-title" style="margin:732px 0 0 20px;">Upper Zora's River:</p>	
+				<label class="itemLabel" style="margin:760px 0 0 20px;"><input type="checkbox" class="itemCheck" > Fishing Hole - Bottle </label>
+				<label class="itemLabel"style="margin:780px 0 0 20px;"><input type="checkbox" class="itemCheck" > Fishing Hole - Heart Piece </label>
+				<label class="itemLabel"style="margin:800px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe </label>
+				<label class="itemLabel"style="margin:820px 0 0 20px;"><input type="checkbox" class="itemCheck" > Plumm Heart Piece </label>
+
+				<p class="area-title" style="margin:12px 0 0 281px;">Lanayru North Field:</p>	
+				<label class="itemLabel" style="margin:40px 0 0 281px;"><input type="checkbox" class="itemCheck" > 100 Rupee chest </label>
+				<label class="itemLabel" style="margin:60px 0 0 281px;"><input type="checkbox" class="itemCheck" > Grotto - 50 Rupee chest</label>
+				<label class="itemLabel" style="margin:80px 0 0 281px;"><input type="checkbox" class="itemCheck" > Heart Piece chest </label>
+				<label class="itemLabel" style="margin:100px 0 0 281px;"><input type="checkbox" class="itemCheck" > Ice Cave - Heart Piece chest </label>
+				<label class="itemLabel"style="margin:120px 0 0 281px;"><input type="checkbox" class="itemCheck" > Poe #1 </label>
+				<label class="itemLabel"style="margin:140px 0 0 281px;"><input type="checkbox" class="itemCheck" > Grotto - Poe #2 </label>
+				<label class="itemLabel"style="margin:160px 0 0 281px;"><input type="checkbox" class="itemCheck" > Grotto - Poe #3 </label>
+
+				<p class="area-title" style="margin:192px 0 0 281px;">Lanayru West Field:</p>	
+				<label class="itemLabel" style="margin:220px 0 0 281px;"><input type="checkbox" class="itemCheck" > Bridge - 100 Rupee chest </label>
+				<label class="itemLabel" style="margin:240px 0 0 281px;"><input type="checkbox" class="itemCheck" > Bridge - 50 Rupee chest </label>
+				<label class="itemLabel" style="margin:260px 0 0 281px;"><input type="checkbox" class="itemCheck" > Bridge - 100 Rupee chest</label>
+				<label class="itemLabel" style="margin:280px 0 0 281px;"><input type="checkbox" class="itemCheck" > Bridge - Grotto - 100 Rupee chest</label>
+				<label class="itemLabel"style="margin:300px 0 0 281px;"><input type="checkbox" class="itemCheck" > Bridge - Poe </label>
+				<label class="itemLabel" style="margin:320px 0 0 281px;"><input type="checkbox" class="itemCheck" > Grotto - 100 Rupee chest</label>
+				<label class="itemLabel"style="margin:340px 0 0 281px;"><input type="checkbox" class="itemCheck" > 100 Rupee chest</label>
+				<label class="itemLabel"style="margin:360px 0 0 281px;"><input type="checkbox" class="itemCheck" > Poe </label>
+
+				<p class="area-title" style="margin:392px 0 0 281px;">Lanayru South Field:</p>	
+				<label class="itemLabel" style="margin:420px 0 0 281px;"><input type="checkbox" class="itemCheck" > 100 Rupee chest </label>
+				<label class="itemLabel" style="margin:440px 0 0 281px;"><input type="checkbox" class="itemCheck" > 100 Rupee chest </label>
+				<label class="itemLabel" style="margin:460px 0 0 281px;"><input type="checkbox" class="itemCheck" > 100 Rupee chest </label>
+				<label class="itemLabel" style="margin:480px 0 0 281px;"><input type="checkbox" class="itemCheck" > Grotto - 100 Rupee chest </label>
+				<label class="itemLabel" style="margin:500px 0 0 281px;"><input type="checkbox" class="itemCheck" > Poe </label>
+
+				<p class="area-title" style="margin:532px 0 0 281px;">Lanayru East Field:</p>	
+				<label class="itemLabel" style="margin:560px 0 0 281px;"><input type="checkbox" class="itemCheck" > Poe </label>
+
+				<p class="area-title" style="margin:592px 0 0 281px;">Castle Town:</p>
+				<label class="itemLabel" style="margin:620px 0 0 281px;"><input type="checkbox" class="itemCheck" > Malo - Magic Armor </label>
+				<label class="itemLabel" style="margin:640px 0 0 281px;"><input type="checkbox" class="itemCheck" > East - 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:660px 0 0 281px;"><input type="checkbox" class="itemCheck" > West - Donation Heart Piece </label>
+				<label class="itemLabel" style="margin:680px 0 0 281px;"><input type="checkbox" class="itemCheck" > STAR - Big Quiver </label>
+				<label class="itemLabel" style="margin:700px 0 0 281px;"><input type="checkbox" class="itemCheck" > STAR - Giant Quiver </label>
+				<label class="itemLabel" style="margin:720px 0 0 281px;"><input type="checkbox" class="itemCheck" > Agitha - Big Wallet </label>
+				<label class="itemLabel" style="margin:740px 0 0 281px;"><input type="checkbox" class="itemCheck" > Agitha - Giant Wallet </label>
+				<label class="itemLabel" style="margin:760px 0 0 281px;"><input type="checkbox" class="itemCheck" > Jovani's Bottle </label>
+				<label class="itemLabel" style="margin:780px 0 0 281px;"><input type="checkbox" class="itemCheck" > East - 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:800px 0 0 281px;"><input type="checkbox" class="itemCheck" > Poe </label>
+
+				<p class="area-title" style="margin:832px 0 0 281px;">Lake Hylia Cave:</p>	
+				<label class="itemLabel"style="margin:860px 0 0 281px;"><input type="checkbox" class="itemCheck" > Bombs (5) chest </label>
+				<label class="itemLabel"style="margin:880px 0 0 281px;"><input type="checkbox" class="itemCheck" > 10 Rupee chest </label>
+				<label class="itemLabel"style="margin:900px 0 0 281px;"><input type="checkbox" class="itemCheck" > 20 Rupee chest </label>		
+				<label class="itemLabel"style="margin:920px 0 0 281px;"><input type="checkbox" class="itemCheck" > Arrows (10) chest </label>	
+				<label class="itemLabel"style="margin:940px 0 0 281px;"><input type="checkbox" class="itemCheck" > 20 Rupee chest </label>	
+				<label class="itemLabel"style="margin:960px 0 0 281px;"><input type="checkbox" class="itemCheck" > 100 Rupee chest </label>	
+				<label class="itemLabel"style="margin:980px 0 0 281px;"><input type="checkbox" class="itemCheck" > 20 Rupee chest </label>	
+				<label class="itemLabel"style="margin:1000px 0 0 281px;"><input type="checkbox" class="itemCheck" > Bombs (5) chest </label>	
+				<label class="itemLabel"style="margin:1020px 0 0 281px;"><input type="checkbox" class="itemCheck" > Arrows (10) chest </label>	
+				<label class="itemLabel"style="margin:1040px 0 0 281px;"><input type="checkbox" class="itemCheck" > 50 Rupee chest </label>	
+				<label class="itemLabel"style="margin:1060px 0 0 281px;"><input type="checkbox" class="itemCheck" > Bombs (10) chest </label>
+				<label class="itemLabel"style="margin:1080px 0 0 281px;"><input type="checkbox" class="itemCheck" > 50 Rupee chest </label>
+				<label class="itemLabel"style="margin:1100px 0 0 281px;"><input type="checkbox" class="itemCheck" > Seeds (50) chest </label>
+				<label class="itemLabel"style="margin:1120px 0 0 281px;"><input type="checkbox" class="itemCheck" > 100 Rupee chest </label>
+				<label class="itemLabel" style="margin:1140px 0 0 281px;"><input type="checkbox" class="itemCheck" > Heart Piece chest </label>
+				<label class="itemLabel" style="margin:1160px 0 0 281px;"><input type="checkbox" class="itemCheck" > Poe #1 </label>
+				<label class="itemLabel" style="margin:1180px 0 0 281px;"><input type="checkbox" class="itemCheck" > Poe #2 </label>
+				<label class="itemLabel" style="margin:1200px 0 0 281px;"><input type="checkbox" class="itemCheck" > Poe #3 </label>
+			</div>
+
+			<div id="faronpage">
+				<p class="area-title">South Faron:</p>
+				<label class="itemLabel" style="margin:88px 0 0 20px;"><input type="checkbox" id="lanternCheck" class="itemCheck"> Lantern </label>
+				<label class="itemLabel" style="margin:108px 0 0 20px;"><input type="checkbox" class="itemCheck" > Cave - 10 Rupee chest </label>
+				<label class="itemLabel" style="margin:128px 0 0 20px;"><input type="checkbox" class="itemCheck"> Coro's Bottle </label>
+
+				<p class="area-title" style="margin:160px 0 0 20px;">Mist Area:</p>
+				<label class="itemLabel" style="margin:188px 0 0 20px;"><input type="checkbox" class="itemCheck" > Cave - Small Key chest </label>
+				<label class="itemLabel" style="margin:208px 0 0 20px;"><input type="checkbox" class="itemCheck" > Cave - Heart Piece chest </label>
+				<label class="itemLabel" style="margin:228px 0 0 20px;"><input type="checkbox" class="itemCheck" > 10 Rupee chest </label>
+				<label class="itemLabel" style="margin:248px 0 0 20px;"><input type="checkbox" class="itemCheck" > 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:268px 0 0 20px;"><input type="checkbox" class="itemCheck" > 50 Rupee chest </label>
+				<label class="itemLabel" style="margin:288px 0 0 20px;"><input type="checkbox" class="itemCheck" > Heart Piece chest </label>
+				<label class="itemLabel"style="margin:308px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe </label>
+
+				<p class="area-title" style="margin:340px 0 0 20px;">North Faron:</p>
+				<label class="itemLabel" style="margin:368px 0 0 20px;"><input type="checkbox" class="itemCheck" > 10 Rupee chest </label>
+
+				<p class="area-title" style="margin:60px 0 0 281px;">Faron Field:</p>
+				<label class="itemLabel" style="margin:88px 0 0 281px;"><input type="checkbox" class="itemCheck" > Grotto - 10 Rupee chest</label>
+				<label class="itemLabel" style="margin:108px 0 0 281px;"><input type="checkbox" class="itemCheck" > Grotto - 20 Rupee chest</label>
+				<label class="itemLabel" style="margin:128px 0 0 281px;"><input type="checkbox" class="itemCheck" > Grotto - 20 Rupee chest</label>
+				<label class="itemLabel"style="margin:148px 0 0 281px;"><input type="checkbox" class="itemCheck" > Poe </label>
+				<label class="itemLabel" style="margin:168px 0 0 281px;"><input type="checkbox" class="itemCheck" > 100 Rupee chest </label>
+
+				<p class="area-title" style="margin:200px 0 0 281px;">Sacred Grove:</p>
+				<label class="itemLabel" style="margin:228px 0 0 281px;"><input type="checkbox" class="itemCheck" > Woods - Bombs (30) chest </label>
+				<label class="itemLabel" style="margin:248px 0 0 281px;"><input type="checkbox" class="itemCheck" > Woods - 100 Rupee chest </label>
+				<label class="itemLabel"style="margin:268px 0 0 281px;"><input type="checkbox" class="itemCheck" > Woods - Poe #1 </label>
+				<label class="itemLabel"style="margin:288px 0 0 281px;"><input type="checkbox" class="itemCheck" > Woods - Poe #2 </label>
+				<label class="itemLabel"style="margin:308px 0 0 281px;"><input type="checkbox" class="itemCheck" > Master Sword </label>
+				<label class="itemLabel" style="margin:328px 0 0 281px;"><input type="checkbox" class="itemCheck" > Woods - Grotto - Heart Piece chest </label>
+				<label class="itemLabel" style="margin:348px 0 0 281px;"><input type="checkbox" class="itemCheck" > Past - Heart Piece chest </label>
+				<label class="itemLabel"style="margin:368px 0 0 281px;"><input type="checkbox" class="itemCheck" > Past - Poe </label>
+				<label class="itemLabel"style="margin:388px 0 0 281px;"><input type="checkbox" class="itemCheck" > Poe </label>
+			</div>
+
+			<div id="snowpeakpage">
+				<p class="area-title">Mountain:</p>
+				<label class="itemLabel" style="margin:88px 0 0 20px;"><input type="checkbox" class="itemCheck" > Grotto - 100 Rupee chest </label>
+				<label class="itemLabel" style="margin:108px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe #1 </label>
+				<label class="itemLabel" style="margin:128px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe #2 </label>
+				<label class="itemLabel" style="margin:148px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe #3 </label>
+
+				<p class="area-title" style="margin:180px 0 0 20px;">Cave:</p>
+				<label class="itemLabel" style="margin:208px 0 0 20px;"><input type="checkbox" class="itemCheck" > 100 Rupee chest </label>
+				<label class="itemLabel" style="margin:228px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe </label>
+
+				<p class="area-title" style="margin:260px 0 0 20px;">Summit:</p>
+				<label class="itemLabel" style="margin:288px 0 0 20px;"><input type="checkbox" class="itemCheck" > Snowboarding Heart Piece </label>
+				<label class="itemLabel" style="margin:308px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe </label>
+			</div>
+
+			<div id="desertpage">
+				<p class="area-title">Desert:</p>
+				<label class="itemLabel" style="margin:88px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe #1 </label>
+				<label class="itemLabel" style="margin:108px 0 0 20px;"><input type="checkbox" class="itemCheck" > Grotto - 100 Rupee chest </label>
+				<label class="itemLabel" style="margin:128px 0 0 20px;"><input type="checkbox" class="itemCheck" > 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:148px 0 0 20px;"><input type="checkbox" class="itemCheck" > 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:168px 0 0 20px;"><input type="checkbox" class="itemCheck" > Arrows (10) chest </label>
+				<label class="itemLabel" style="margin:188px 0 0 20px;"><input type="checkbox" class="itemCheck" > 50 Rupee chest </label>
+				<label class="itemLabel" style="margin:208px 0 0 20px;"><input type="checkbox" class="itemCheck" > Grotto - 100 Rupee chest </label>
+				<label class="itemLabel" style="margin:228px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe #2 </label>
+				<label class="itemLabel" style="margin:248px 0 0 20px;"><input type="checkbox" class="itemCheck" > Grotto - Poe #1 </label>
+				<label class="itemLabel" style="margin:268px 0 0 20px;"><input type="checkbox" class="itemCheck" > Grotto - Poe #2 </label>
+				<label class="itemLabel" style="margin:288px 0 0 20px;"><input type="checkbox" class="itemCheck" > 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:308px 0 0 20px;"><input type="checkbox" class="itemCheck" > 100 Rupee chest </label>
+				<label class="itemLabel" style="margin:328px 0 0 20px;"><input type="checkbox" class="itemCheck" > 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:348px 0 0 20px;"><input type="checkbox" class="itemCheck" > 50 Rupee chest </label>
+				<label class="itemLabel" style="margin:368px 0 0 20px;"><input type="checkbox" class="itemCheck" > Arrows (10) chest </label>
+				<label class="itemLabel" style="margin:388px 0 0 20px;"><input type="checkbox" class="itemCheck" > 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:408px 0 0 20px;"><input type="checkbox" class="itemCheck" > Arrows (10) chest </label>
+				<label class="itemLabel" style="margin:428px 0 0 20px;"><input type="checkbox" class="itemCheck" > 100 Rupee chest </label>
+				<label class="itemLabel" style="margin:448px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe #3 </label>
+				<label class="itemLabel" style="margin:468px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe #4 </label>
+
+				<p class="area-title" style="margin:60px 0 0 281px;">Bulblin Camp:</p>
+				<label class="itemLabel" style="margin:88px 0 0 281px;"><input type="checkbox" class="itemCheck" > Inside - Arrows (20) chest </label>
+				<label class="itemLabel" style="margin:108px 0 0 281px;"><input type="checkbox" class="itemCheck" > Inside - 50 Rupee chest </label>
+				<label class="itemLabel" style="margin:128px 0 0 281px;"><input type="checkbox" class="itemCheck" > Inside - Boar Heart Piece </label>
+				<label class="itemLabel" style="margin:148px 0 0 281px;"><input type="checkbox" class="itemCheck" > Inside - Poe </label>
+				<label class="itemLabel" style="margin:168px 0 0 281px;"><input type="checkbox" class="itemCheck" > Outside - 50 Rupee chest </label>
+				<label class="itemLabel" style="margin:188px 0 0 281px;"><input type="checkbox" class="itemCheck" > Outside - Poe </label>
+			</div>
+
+			<div id="CoOpage">
+				<p class="area-title">Floor 18:</p>
+				<label class="itemLabel" style="margin:88px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe </label>
+
+				<p class="area-title" style="margin:120px 0 0 20px;">Floor 33:</p>
+				<label class="itemLabel" style="margin:148px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe </label>
+
+				<p class="area-title" style="margin:180px 0 0 20px;">Floor 44:</p>
+				<label class="itemLabel" style="margin:208px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe </label>
+			</div>
+
+
+			<div id="FTpage">
+				<p class="area-title">Entrance:</p>
+				<label class="itemLabel" style="margin:88px 0 0 20px;"><input type="checkbox" class="itemCheck" > 10 Rupee chest </label>
+
+				<p class="area-title" style="margin:120px 0 0 20px;">Center Room:</p>
+				<label class="itemLabel" style="margin:148px 0 0 20px;"><input type="checkbox" class="itemCheck" > 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:168px 0 0 20px;"><input type="checkbox" class="itemCheck" > Dungeon Map chest </label>
+				<label class="itemLabel" style="margin:188px 0 0 20px;"><input type="checkbox" class="itemCheck" > Compass chest </label>
+
+				<p class="area-title" style="margin:220px 0 0 20px;">East Wing:</p>
+				<label class="itemLabel" style="margin:248px 0 0 20px;"><input type="checkbox" class="itemCheck" > 2nd Monkey - 10 Rupee chest </label>
+				<label class="itemLabel" style="margin:268px 0 0 20px;"><input type="checkbox" class="itemCheck" > Boss Key chest </label>
+				<label class="itemLabel" style="margin:288px 0 0 20px;"><input type="checkbox" class="itemCheck" > 10 Rupee chest </label>
+
+				<p class="area-title" style="margin:320px 0 0 20px;">West Wing:</p>
+				<label class="itemLabel" style="margin:348px 0 0 20px;"><input type="checkbox" class="itemCheck" > 3rd Monkey - Small Key chest </label>
+				<label class="itemLabel" style="margin:368px 0 0 20px;"><input type="checkbox" class="itemCheck" > 3rd Monkey - 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:388px 0 0 20px;"><input type="checkbox" class="itemCheck" > 3rd Monkey - Heart Piece chest </label>
+				<label class="itemLabel" style="margin:408px 0 0 20px;"><input type="checkbox" class="itemCheck" > 4th Monkey - Small Key </label>
+				<label class="itemLabel" style="margin:428px 0 0 20px;"><input type="checkbox" class="itemCheck" > Heart Piece chest </label>
+
+				<p class="area-title" style="margin:60px 0 0 281px;">North Hub:</p>
+				<label class="itemLabel" style="margin:88px 0 0 281px;"><input type="checkbox" class="itemCheck" > Small Key chest </label>
+				<label class="itemLabel" style="margin:108px 0 0 281px;"><input type="checkbox" class="itemCheck" > 6th Monkey - 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:128px 0 0 281px;"><input type="checkbox" class="itemCheck" > Final Monkey - Small Key chest </label>
+
+				<p class="area-title" style="margin:160px 0 0 281px;">Ook:</p>
+				<label class="itemLabel" style="margin:188px 0 0 281px;"><input type="checkbox" class="itemCheck" > Boomerang </label>
+
+				<p class="area-title" style="margin:220px 0 0 281px;">Diababa:</p>
+				<label class="itemLabel" style="margin:248px 0 0 281px;"><input type="checkbox" class="itemCheck" > Heart Container </label>
+			</div>
+
+			<div id="GMpage">
+				<p class="area-title">Entrance:</p>
+				<label class="itemLabel" style="margin:88px 0 0 20px;"><input type="checkbox" class="itemCheck" > 20 Rupee chest </label>
+
+				<p class="area-title" style="margin:120px 0 0 20px;">Center Magnet Room:</p>
+				<label class="itemLabel" style="margin:148px 0 0 20px;"><input type="checkbox" class="itemCheck" > Lower - Small Key chest </label>
+				<label class="itemLabel" style="margin:168px 0 0 20px;"><input type="checkbox" class="itemCheck" > Upper - 50 Rupee chest </label>
+
+				<p class="area-title" style="margin:200px 0 0 20px;">West Wing:</p>
+				<label class="itemLabel" style="margin:228px 0 0 20px;"><input type="checkbox" class="itemCheck" > 1st Elder - Key Shard #1 </label>
+				<label class="itemLabel" style="margin:248px 0 0 20px;"><input type="checkbox" class="itemCheck" > 1st Elder - Dungeon Map </label>
+				<label class="itemLabel" style="margin:268px 0 0 20px;"><input type="checkbox" class="itemCheck" > 1st Elder - 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:288px 0 0 20px;"><input type="checkbox" class="itemCheck" > Heart Piece chest </label>
+
+				<p class="area-title" style="margin:320px 0 0 20px;">North Wing:</p>
+				<label class="itemLabel" style="margin:348px 0 0 20px;"><input type="checkbox" class="itemCheck" > Switch room - Small Key chest </label>
+				<label class="itemLabel" style="margin:368px 0 0 20px;"><input type="checkbox" class="itemCheck" > Switch room - 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:388px 0 0 20px;"><input type="checkbox" class="itemCheck" > Switch room - Heart Piece chest </label>
+				<label class="itemLabel" style="margin:408px 0 0 20px;"><input type="checkbox" class="itemCheck" > Outside - Small Key chest </label>
+				<label class="itemLabel" style="margin:428px 0 0 20px;"><input type="checkbox" class="itemCheck" > Outside - 50 Rupee chest </label>
+				<label class="itemLabel" style="margin:448px 0 0 20px;"><input type="checkbox" class="itemCheck" > Outside - 50 Rupee chest </label>
+
+				<p class="area-title" style="margin:60px 0 0 281px;">East Wing:</p>
+				<label class="itemLabel" style="margin:88px 0 0 281px;"><input type="checkbox" class="itemCheck" > 2nd Elder - Key Shard #2 </label>
+				<label class="itemLabel" style="margin:108px 0 0 281px;"><input type="checkbox" class="itemCheck" > 2nd Elder - 10 Rupee chest </label>
+				<label class="itemLabel" style="margin:128px 0 0 281px;"><input type="checkbox" class="itemCheck" > Pre-Dangoro - 10 Rupee chest </label>
+				<label class="itemLabel" style="margin:148px 0 0 281px;"><input type="checkbox" class="itemCheck" > Beamos room - Bow chest </label>
+				<label class="itemLabel" style="margin:168px 0 0 281px;"><input type="checkbox" class="itemCheck" > Beamos room - Compass chest </label>
+				<label class="itemLabel" style="margin:188px 0 0 281px;"><input type="checkbox" class="itemCheck" > 3rd Elder - Key Shard #3 </label>
+				<label class="itemLabel" style="margin:208px 0 0 281px;"><input type="checkbox" class="itemCheck" > 3rd Elder - 50 Rupee chest </label>
+
+				<p class="area-title" style="margin:240px 0 0 281px;">Fyrus:</p>
+				<label class="itemLabel" style="margin:268px 0 0 281px;"><input type="checkbox" class="itemCheck" > Heart Container </label>
+			</div>
+
+			<div id="LBpage">
+				<p class="area-title">Entrance:</p>
+				<label class="itemLabel" style="margin:88px 0 0 20px;"><input type="checkbox" class="itemCheck" > Arrows (20) chest </label>
+				<label class="itemLabel" style="margin:108px 0 0 20px;"><input type="checkbox" class="itemCheck" > Water Bombs (10) chest </label>
+
+				<p class="area-title" style="margin:140px 0 0 20px;">Stalactite Room:</p>
+				<label class="itemLabel" style="margin:168px 0 0 20px;"><input type="checkbox" class="itemCheck" > Water Bombs (10) chest </label>
+
+				<p class="area-title" style="margin:200px 0 0 20px;">Center Room:</p>
+				<label class="itemLabel" style="margin:228px 0 0 20px;"><input type="checkbox" class="itemCheck" > Arrows (20) chest </label>
+				<label class="itemLabel" style="margin:248px 0 0 20px;"><input type="checkbox" class="itemCheck" > Dungeon Map chest </label>
+				<label class="itemLabel" style="margin:268px 0 0 20px;"><input type="checkbox" class="itemCheck" > 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:288px 0 0 20px;"><input type="checkbox" class="itemCheck" > Heart Piece chest </label>
+
+				<p class="area-title" style="margin:320px 0 0 20px;">East Wing:</p>
+				<label class="itemLabel" style="margin:348px 0 0 20px;"><input type="checkbox" class="itemCheck" > Lower - Small Key chest </label>
+				<label class="itemLabel" style="margin:368px 0 0 20px;"><input type="checkbox" class="itemCheck" > Upper - Water Bombs (5) chest </label>
+				<label class="itemLabel" style="margin:388px 0 0 20px;"><input type="checkbox" class="itemCheck" > Upper - Small Key chest </label>
+				<label class="itemLabel" style="margin:408px 0 0 20px;"><input type="checkbox" class="itemCheck" > Supply - Water Bombs (10) chest </label>
+				<label class="itemLabel" style="margin:428px 0 0 20px;"><input type="checkbox" class="itemCheck" > Supply - 50 Rupee chest </label>
+				<label class="itemLabel" style="margin:448px 0 0 20px;"><input type="checkbox" class="itemCheck" > Pre-Deku Toad - Small Key chest </label>
+				<label class="itemLabel" style="margin:468px 0 0 20px;"><input type="checkbox" class="itemCheck" > Pre-Deku Toad - 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:488px 0 0 20px;"><input type="checkbox" class="itemCheck" > Pre-Deku Toad - Water Bombs (5) chest </label>
+				<label class="itemLabel" style="margin:508px 0 0 20px;"><input type="checkbox" class="itemCheck" > Lower - Heart Piece chest </label>
+
+				<p class="area-title" style="margin:60px 0 0 281px;">West Wing:</p>
+				<label class="itemLabel" style="margin:88px 0 0 281px;"><input type="checkbox" class="itemCheck" > Lower - Water Bombs (10) chest </label>
+				<label class="itemLabel" style="margin:108px 0 0 281px;"><input type="checkbox" class="itemCheck" > Supply - Water Bombs (10) chest </label>
+				<label class="itemLabel" style="margin:128px 0 0 281px;"><input type="checkbox" class="itemCheck" > Supply - Compass chest </label>
+				<label class="itemLabel" style="margin:148px 0 0 281px;"><input type="checkbox" class="itemCheck" > Upper - 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:168px 0 0 281px;"><input type="checkbox" class="itemCheck" > Lower - 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:188px 0 0 281px;"><input type="checkbox" class="itemCheck" > Upper - 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:208px 0 0 281px;"><input type="checkbox" class="itemCheck" > Upper - Water Bombs (15) chest </label>
+				<label class="itemLabel" style="margin:228px 0 0 281px;"><input type="checkbox" class="itemCheck" > Boss Key room - Boss Key </label>
+				<label class="itemLabel" style="margin:248px 0 0 281px;"><input type="checkbox" class="itemCheck" > Maze - Water Bombs (5) chest </label>
+
+				<p class="area-title" style="margin:280px 0 0 281px;">Deku Toad:</p>
+				<label class="itemLabel" style="margin:308px 0 0 281px;"><input type="checkbox" class="itemCheck" > Clawshot chest </label>
+
+				<p class="area-title" style="margin:340px 0 0 281px;">Morpheel:</p>
+				<label class="itemLabel" style="margin:368px 0 0 281px;"><input type="checkbox" class="itemCheck" > Heart Container </label>
+			</div>
+
+			<div id="AGpage">
+				<p class="area-title">Entrance:</p>
+				<label class="itemLabel" style="margin:88px 0 0 20px;"><input type="checkbox" class="itemCheck" > Small Key chest </label>
+
+				<p class="area-title" style="margin:120px 0 0 20px;">Main Room:</p>
+				<label class="itemLabel" style="margin:148px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe </label>
+				<label class="itemLabel" style="margin:168px 0 0 20px;"><input type="checkbox" class="itemCheck" > Dungeon Map chest </label>
+				<label class="itemLabel" style="margin:188px 0 0 20px;"><input type="checkbox" class="itemCheck" > Heart Piece chest </label>
+
+				<p class="area-title" style="margin:220px 0 0 20px;">East Wing:</p>
+				<label class="itemLabel" style="margin:248px 0 0 20px;"><input type="checkbox" class="itemCheck" > Lower - Small Key chest </label>
+				<label class="itemLabel" style="margin:268px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe 2 room - Poe </label>
+				<label class="itemLabel" style="margin:288px 0 0 20px;"><input type="checkbox" class="itemCheck" > Upper - Compass chest </label>
+				<label class="itemLabel" style="margin:308px 0 0 20px;"><input type="checkbox" class="itemCheck" > Upper - Small Key chest </label>
+				<label class="itemLabel" style="margin:328px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe 3 room - Poe </label>
+				<label class="itemLabel" style="margin:348px 0 0 20px;"><input type="checkbox" class="itemCheck" > After Poe 3 - Small Key chest </label>
+
+				<p class="area-title" style="margin:380px 0 0 20px;">West Wing:</p>
+				<label class="itemLabel" style="margin:408px 0 0 20px;"><input type="checkbox" class="itemCheck" > Lower - 20 Rupee chest</label>
+				<label class="itemLabel" style="margin:428px 0 0 20px;"><input type="checkbox" class="itemCheck" > Lower - 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:448px 0 0 20px;"><input type="checkbox" class="itemCheck" > Stalfos room - Bombs (5) chest </label>
+				<label class="itemLabel" style="margin:468px 0 0 20px;"><input type="checkbox" class="itemCheck" > Stalfos room - Bombs (5) chest </label>
+				<label class="itemLabel" style="margin:488px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe 4 room - Poe </label>
+
+				<p class="area-title" style="margin:60px 0 0 281px;">North Wing:</p>
+				<label class="itemLabel" style="margin:88px 0 0 281px;"><input type="checkbox" class="itemCheck" > Turning room - Small Key chest </label>
+				<label class="itemLabel" style="margin:108px 0 0 281px;"><input type="checkbox" class="itemCheck" > Spinner room - 10 Rupee chest </label>
+				<label class="itemLabel" style="margin:128px 0 0 281px;"><input type="checkbox" class="itemCheck" > Spinner room - Bombs (10) chest </label>
+				<label class="itemLabel" style="margin:148px 0 0 281px;"><input type="checkbox" class="itemCheck" > Spinner room - 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:168px 0 0 281px;"><input type="checkbox" class="itemCheck" > Spinner room - Heart piece chest</label>
+				<label class="itemLabel" style="margin:188px 0 0 281px;"><input type="checkbox" class="itemCheck" > Spinner room - 10 Rupee chest </label>
+				<label class="itemLabel" style="margin:208px 0 0 281px;"><input type="checkbox" class="itemCheck" > Boss Key chest </label>
+
+				<p class="area-title" style="margin:240px 0 0 281px;">Death Sword:</p>
+				<label class="itemLabel" style="margin:268px 0 0 281px;"><input type="checkbox" class="itemCheck" > Spinner chest </label>
+
+				<p class="area-title" style="margin:300px 0 0 281px;">Stallord:</p>
+				<label class="itemLabel" style="margin:328px 0 0 281px;"><input type="checkbox" class="itemCheck" > Heart Container </label>
+			</div>
+
+			<div id="SPRpage">
+				<p class="area-title">Entrance:</p>
+				<label class="itemLabel" style="margin:88px 0 0 20px;"><input type="checkbox" class="itemCheck" > Heart Piece chest </label>
+				<label class="itemLabel" style="margin:108px 0 0 20px;"><input type="checkbox" class="itemCheck" > 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:128px 0 0 20px;"><input type="checkbox" class="itemCheck" > 10 Rupee chest </label>
+				<label class="itemLabel" style="margin:148px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe #1 </label>
+				<label class="itemLabel" style="margin:168px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe #2 </label>
+				<label class="itemLabel" style="margin:188px 0 0 20px;"><input type="checkbox" class="itemCheck" > Yeta's Room - Dungeon Map </label>
+
+				<p class="area-title" style="margin:220px 0 0 20px;">East Side:</p>
+				<label class="itemLabel" style="margin:248px 0 0 20px;"><input type="checkbox" class="itemCheck" > Chillfos fight - Ordon Pumpkin chest </label>
+				<label class="itemLabel" style="margin:268px 0 0 20px;"><input type="checkbox" class="itemCheck" > Chillfos fight - Small Key chest</label>
+				<label class="itemLabel" style="margin:288px 0 0 20px;"><input type="checkbox" class="itemCheck" > Ice Room - Upper - Poe </label>
+
+				<p class="area-title" style="margin:320px 0 0 20px;">West Side:</p>
+				<label class="itemLabel" style="margin:348px 0 0 20px;"><input type="checkbox" class="itemCheck" > Wood Beams room - 20 Rupee chest</label>
+				<label class="itemLabel" style="margin:368px 0 0 20px;"><input type="checkbox" class="itemCheck" > Wood Beams room - Compass chest </label>
+				<label class="itemLabel" style="margin:388px 0 0 20px;"><input type="checkbox" class="itemCheck" > Wood Beams room - Small Key chest </label>
+				<label class="itemLabel" style="margin:408px 0 0 20px;"><input type="checkbox" class="itemCheck" > Cage room - Lower - Heart Piece chest </label>
+				<label class="itemLabel" style="margin:428px 0 0 20px;"><input type="checkbox" class="itemCheck" > Cage room - Poe </label>
+				<label class="itemLabel" style="margin:448px 0 0 20px;"><input type="checkbox" class="itemCheck" > Cannon room - 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:468px 0 0 20px;"><input type="checkbox" class="itemCheck" > Cannon room - Bombs (5) chest </label>
+				<label class="itemLabel" style="margin:488px 0 0 20px;"><input type="checkbox" class="itemCheck" > Boss Key room - Boss Key </label>
+
+				<p class="area-title" style="margin:60px 0 0 281px;">Courtyard:</p>
+				<label class="itemLabel" style="margin:88px 0 0 281px;"><input type="checkbox" class="itemCheck" > Small Key chest </label>
+				<label class="itemLabel" style="margin:108px 0 0 281px;"><input type="checkbox" class="itemCheck" > 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:128px 0 0 281px;"><input type="checkbox" class="itemCheck" > Small Key chest </label>
+				<label class="itemLabel" style="margin:148px 0 0 281px;"><input type="checkbox" class="itemCheck" > Bombs (5) chest </label>
+
+				<p class="area-title" style="margin:180px 0 0 281px;">Darkhammer:</p>
+				<label class="itemLabel" style="margin:208px 0 0 281px;"><input type="checkbox" class="itemCheck" > Ball & Chain </label>
+				<label class="itemLabel" style="margin:228px 0 0 281px;"><input type="checkbox" class="itemCheck" > Back room - Ordon Cheese chest </label>
+
+				<p class="area-title" style="margin:260px 0 0 281px;">Blizzeta:</p>
+				<label class="itemLabel" style="margin:288px 0 0 281px;"><input type="checkbox" class="itemCheck" > Heart Container </label>
+			</div>
+
+			<div id="ToTpage">
+				<p class="area-title">Entrance:</p>
+				<label class="itemLabel" style="margin:88px 0 0 20px;"><input type="checkbox" class="itemCheck" > Small Key chest </label>
+
+				<p class="area-title" style="margin:120px 0 0 20px;">First Staircase:</p>
+				<label class="itemLabel" style="margin:148px 0 0 20px;"><input type="checkbox" class="itemCheck" > Arrows (30) chest </label>
+				<label class="itemLabel" style="margin:168px 0 0 20px;"><input type="checkbox" class="itemCheck" > 20 Rupee chest</label>
+				<label class="itemLabel" style="margin:188px 0 0 20px;"><input type="checkbox" class="itemCheck" > Dungeon Map chest </label>
+
+				<p class="area-title" style="margin:220px 0 0 20px;">Spiral Staircase:</p>
+				<label class="itemLabel" style="margin:248px 0 0 20px;"><input type="checkbox" class="itemCheck" > Poe</label>
+
+				<p class="area-title" style="margin:280px 0 0 20px;">Double Armos Room:</p>
+				<label class="itemLabel" style="margin:308px 0 0 20px;"><input type="checkbox" class="itemCheck" > Small Key chest </label>
+				<label class="itemLabel" style="margin:328px 0 0 20px;"><input type="checkbox" class="itemCheck" > 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:348px 0 0 20px;"><input type="checkbox" class="itemCheck" > Heart Piece chest </label>
+
+				<p class="area-title" style="margin:380px 0 0 20px;">Second Staircase:</p>
+				<label class="itemLabel" style="margin:408px 0 0 20px;"><input type="checkbox" class="itemCheck" > Compass chest </label>
+				<label class="itemLabel" style="margin:428px 0 0 20px;"><input type="checkbox" class="itemCheck" > Heart Piece chest </label>
+
+				<p class="area-title" style="margin:60px 0 0 281px;">Scale Room:</p>
+				<label class="itemLabel" style="margin:88px 0 0 281px;"><input type="checkbox" class="itemCheck" > 50 Rupee chest </label>
+				<label class="itemLabel" style="margin:108px 0 0 281px;"><input type="checkbox" class="itemCheck" > 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:128px 0 0 281px;"><input type="checkbox" class="itemCheck" > Poe </label>
+				<label class="itemLabel" style="margin:148px 0 0 281px;"><input type="checkbox" class="itemCheck" > Boss Key room - Boss Key chest </label>
+				<label class="itemLabel" style="margin:168px 0 0 281px;"><input type="checkbox" class="itemCheck" > Boss Key room - 20 Rupee chest </label>
+
+				<p class="area-title" style="margin:200px 0 0 281px;">Third Staircase:</p>
+				<label class="itemLabel" style="margin:228px 0 0 281px;"><input type="checkbox" class="itemCheck" > Small Key chest </label>
+				<label class="itemLabel" style="margin:248px 0 0 281px;"><input type="checkbox" class="itemCheck" > 50 Rupee chest </label>
+
+				<p class="area-title" style="margin:280px 0 0 281px;">Darknut:</p>
+				<label class="itemLabel" style="margin:308px 0 0 281px;"><input type="checkbox" class="itemCheck" > Dominion Rod chest </label>
+
+				<p class="area-title" style="margin:340px 0 0 281px;">Armogohma:</p>
+				<label class="itemLabel" style="margin:368px 0 0 281px;"><input type="checkbox" class="itemCheck" > Heart Container </label>
+			</div>
+
+			<div id="Citypage">
+				<p class="area-title">Entrance:</p>
+				<label class="itemLabel" style="margin:88px 0 0 20px;"><input type="checkbox" class="itemCheck" > Water Bombs (15) chest </label>
+				<label class="itemLabel" style="margin:108px 0 0 20px;"><input type="checkbox" class="itemCheck" > 20 Rupee chest </label>
+
+				<p class="area-title" style="margin:140px 0 0 20px;">Center Room:</p>
+				<label class="itemLabel" style="margin:168px 0 0 20px;"><input type="checkbox" class="itemCheck" > Upper - Boss Key chest </label>
+				<label class="itemLabel" style="margin:188px 0 0 20px;"><input type="checkbox" class="itemCheck" > Upper - 10 Rupee chest</label>
+				<label class="itemLabel" style="margin:208px 0 0 20px;"><input type="checkbox" class="itemCheck" > Outside - 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:228px 0 0 20px;"><input type="checkbox" class="itemCheck" > Outside - 50 Rupee chest </label>
+				<label class="itemLabel" style="margin:248px 0 0 20px;"><input type="checkbox" class="itemCheck" > Outside - Poe </label>
+
+				<p class="area-title" style="margin:280px 0 0 20px;">North Wing:</p>
+				<label class="itemLabel" style="margin:308px 0 0 20px;"><input type="checkbox" class="itemCheck" > 50 Rupee chest </label>
+
+				<p class="area-title" style="margin:340px 0 0 20px;">East Wing:</p>
+				<label class="itemLabel" style="margin:368px 0 0 20px;"><input type="checkbox" class="itemCheck" > Pre-Aeralfos room - Dungeon Map chest </label>
+				<label class="itemLabel" style="margin:388px 0 0 20px;"><input type="checkbox" class="itemCheck" > Pre-Dynalfos room - 10 Rupee chest </label>
+				<label class="itemLabel" style="margin:408px 0 0 20px;"><input type="checkbox" class="itemCheck" > After Dynalfos room - 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:428px 0 0 20px;"><input type="checkbox" class="itemCheck" > After Dynalfos room - 50 Rupee chest </label>
+				<label class="itemLabel" style="margin:448px 0 0 20px;"><input type="checkbox" class="itemCheck" > First room - Lower - Compass chest </label>
+
+				<p class="area-title" style="margin:60px 0 0 281px;">West Wing:</p>
+				<label class="itemLabel" style="margin:88px 0 0 281px;"><input type="checkbox" class="itemCheck" > First room - Small Key chest</label>
+				<label class="itemLabel" style="margin:108px 0 0 281px;"><input type="checkbox" class="itemCheck" > First room - Arrows (20) chest </label>
+				<label class="itemLabel" style="margin:128px 0 0 281px;"><input type="checkbox" class="itemCheck" > First room - 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:148px 0 0 281px;"><input type="checkbox" class="itemCheck" > First room - Bombs (10) chest </label>
+				<label class="itemLabel" style="margin:168px 0 0 281px;"><input type="checkbox" class="itemCheck" > Big Baba room - 10 Rupee chest </label>
+				<label class="itemLabel" style="margin:188px 0 0 281px;"><input type="checkbox" class="itemCheck" > Big Baba room - Arrows (20) chest </label>
+				<label class="itemLabel" style="margin:208px 0 0 281px;"><input type="checkbox" class="itemCheck" > Big Baba room - Heart Piece chest </label>
+				<label class="itemLabel" style="margin:228px 0 0 281px;"><input type="checkbox" class="itemCheck" > Outside - 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:248px 0 0 281px;"><input type="checkbox" class="itemCheck" > Outside - Poe </label>
+				<label class="itemLabel" style="margin:268px 0 0 281px;"><input type="checkbox" class="itemCheck" > Outside - 50 Rupee chest </label>
+				<label class="itemLabel" style="margin:288px 0 0 281px;"><input type="checkbox" class="itemCheck" > Outside - Bombs (5) chest </label>
+				<label class="itemLabel" style="margin:308px 0 0 281px;"><input type="checkbox" class="itemCheck" > Outside - Heart Piece chest </label>
+
+				<p class="area-title" style="margin:340px 0 0 281px;">Aeralfos:</p>
+				<label class="itemLabel" style="margin:368px 0 0 281px;"><input type="checkbox" class="itemCheck" > Double Clawshots chest </label>
+
+				<p class="area-title" style="margin:400px 0 0 281px;">Argorok:</p>
+				<label class="itemLabel" style="margin:428px 0 0 281px;"><input type="checkbox" class="itemCheck" > Heart Container </label>
+			</div>
+
+			<div id="PoTpage">
+				<p class="area-title">Entrance:</p>
+				<label class="itemLabel" style="margin:88px 0 0 20px;"><input type="checkbox" class="itemCheck" > Light Sword </label>
+
+				<p class="area-title" style="margin:120px 0 0 20px;">West Wing:</p>
+				<label class="itemLabel" style="margin:148px 0 0 20px;"><input type="checkbox" class="itemCheck" > First room - Small Key chest </label>
+				<label class="itemLabel" style="margin:168px 0 0 20px;"><input type="checkbox" class="itemCheck" > First room - Heart Piece chest </label>
+				<label class="itemLabel" style="margin:188px 0 0 20px;"><input type="checkbox" class="itemCheck" > Second room - Small Key chest</label>
+				<label class="itemLabel" style="margin:208px 0 0 20px;"><input type="checkbox" class="itemCheck" > Second room - Compass chest </label>
+				<label class="itemLabel" style="margin:228px 0 0 20px;"><input type="checkbox" class="itemCheck" > Second room - 100 Rupee chest </label>
+
+				<p class="area-title" style="margin:260px 0 0 20px;">East Wing:</p>
+				<label class="itemLabel" style="margin:288px 0 0 20px;"><input type="checkbox" class="itemCheck" > First room - 50 Rupee chest </label>
+				<label class="itemLabel" style="margin:308px 0 0 20px;"><input type="checkbox" class="itemCheck" > First room - Small Key chest </label>
+				<label class="itemLabel" style="margin:328px 0 0 20px;"><input type="checkbox" class="itemCheck" > First room - 50 Rupee chest </label>
+				<label class="itemLabel" style="margin:348px 0 0 20px;"><input type="checkbox" class="itemCheck" > First room - Heart Piece </label>
+				<label class="itemLabel" style="margin:368px 0 0 20px;"><input type="checkbox" class="itemCheck" > Second room - 50 Rupee chest </label>
+				<label class="itemLabel" style="margin:388px 0 0 20px;"><input type="checkbox" class="itemCheck" > Second room - 50 Rupee chest </label>
+				<label class="itemLabel" style="margin:408px 0 0 20px;"><input type="checkbox" class="itemCheck" > Second room - Dungeon Map </label>
+				<label class="itemLabel" style="margin:428px 0 0 20px;"><input type="checkbox" class="itemCheck" > Second room - Small Key </label>
+
+				<p class="area-title" style="margin:60px 0 0 281px;">North Wing:</p>
+				<label class="itemLabel" style="margin:88px 0 0 281px;"><input type="checkbox" class="itemCheck" > First room - Small Key </label>
+				<label class="itemLabel" style="margin:108px 0 0 281px;"><input type="checkbox" class="itemCheck" > Outside - Boss Key chest </label>
+				<label class="itemLabel" style="margin:128px 0 0 281px;"><input type="checkbox" class="itemCheck" > Outside - Small Key chest </label>
+				<label class="itemLabel" style="margin:148px 0 0 281px;"><input type="checkbox" class="itemCheck" > Third room - Small Key chest </label>
+
+				<p class="area-title" style="margin:180px 0 0 281px;">Zant:</p>
+				<label class="itemLabel" style="margin:208px 0 0 281px;"><input type="checkbox" class="itemCheck" > Heart Container </label>
+			</div>
+
+			<div id="HCpage">
+				<p class="area-title">Courtyard:</p>
+				<label class="itemLabel" style="margin:88px 0 0 20px;"><input type="checkbox" class="itemCheck" > East wing - Dungeon Map chest </label>
+				<label class="itemLabel" style="margin:108px 0 0 20px;"><input type="checkbox" class="itemCheck" > East wing - 10 Rupee chest </label>
+				<label class="itemLabel" style="margin:128px 0 0 20px;"><input type="checkbox" class="itemCheck" > West wing - 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:148px 0 0 20px;"><input type="checkbox" class="itemCheck" > West wing - 20 Rupee chest </label>
+
+				<p class="area-title" style="margin:180px 0 0 20px;">Graveyard:</p>
+				<label class="itemLabel" style="margin:208px 0 0 20px;"><input type="checkbox" class="itemCheck" > 1 Rupee chest </label>
+				<label class="itemLabel" style="margin:228px 0 0 20px;"><input type="checkbox" class="itemCheck" > 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:248px 0 0 20px;"><input type="checkbox" class="itemCheck" > 100 Rupee chest </label>
+				<label class="itemLabel" style="margin:268px 0 0 20px;"><input type="checkbox" class="itemCheck" > Small Key chest </label>
+
+				<p class="area-title" style="margin:300px 0 0 20px;">Main Hall:</p>
+				<label class="itemLabel" style="margin:328px 0 0 20px;"><input type="checkbox" class="itemCheck" > Compass chest </label>
+				<label class="itemLabel" style="margin:348px 0 0 20px;"><input type="checkbox" class="itemCheck" > 50 Rupee chest </label>
+				<label class="itemLabel" style="margin:368px 0 0 20px;"><input type="checkbox" class="itemCheck" > 200 Rupee chest </label>
+
+				<p class="area-title" style="margin:400px 0 0 20px;">Upper Floor:</p>
+				<label class="itemLabel" style="margin:428px 0 0 20px;"><input type="checkbox" class="itemCheck" > 50 Rupee chest </label>
+
+				<p class="area-title" style="margin:60px 0 0 281px;">Outside Upper Floor:</p>
+				<label class="itemLabel" style="margin:88px 0 0 281px;"><input type="checkbox" class="itemCheck" > Small Key </label>
+				<label class="itemLabel" style="margin:108px 0 0 281px;"><input type="checkbox" class="itemCheck" > Boss Key chest </label>
+
+				<p class="area-title" style="margin:140px 0 0 281px;">Treasure Room:</p>
+				<label class="itemLabel" style="margin:168px 0 0 281px;"><input type="checkbox" class="itemCheck" > 5 Rupee chest </label>
+				<label class="itemLabel" style="margin:188px 0 0 281px;"><input type="checkbox" class="itemCheck" > 10 Rupee chest </label>
+				<label class="itemLabel" style="margin:208px 0 0 281px;"><input type="checkbox" class="itemCheck" > 20 Rupee chest </label>
+				<label class="itemLabel" style="margin:228px 0 0 281px;"><input type="checkbox" class="itemCheck" > Water Bombs (15) chest </label>
+				<label class="itemLabel" style="margin:248px 0 0 281px;"><input type="checkbox" class="itemCheck" > Arrows (20) chest </label>
+				<label class="itemLabel" style="margin:268px 0 0 281px;"><input type="checkbox" class="itemCheck" > Bombs (20) chest </label>
+				<label class="itemLabel" style="margin:288px 0 0 281px;"><input type="checkbox" class="itemCheck" > 1 Rupee chest </label>
+				<label class="itemLabel" style="margin:308px 0 0 281px;"><input type="checkbox" class="itemCheck" > Arrows (30) chest </label>
+				<label class="itemLabel" style="margin:328px 0 0 281px;"><input type="checkbox" class="itemCheck" > 50 Rupee chest </label>
+				<label class="itemLabel" style="margin:348px 0 0 281px;"><input type="checkbox" class="itemCheck" > Bomblings (10) chest </label>
+				<label class="itemLabel" style="margin:368px 0 0 281px;"><input type="checkbox" class="itemCheck" > 200 Rupee chest </label>
+				<label class="itemLabel" style="margin:388px 0 0 281px;"><input type="checkbox" class="itemCheck" > Seeds (50) chest </label>
+				<label class="itemLabel" style="margin:408px 0 0 281px;"><input type="checkbox" class="itemCheck" > 100 Rupee chest </label>
+			</div>
+	</div>
+
+	<button id="closeButton">X</button>
+	<img id="mapbg" src="resources/map.png"/>
 </div>
+
 
 
 </div>
